@@ -56,10 +56,10 @@ const Cart = () => {
         return sentence.slice(0,150) + "..."
     }
 
-    async function removeFromCart(product){
+    async function removeFromCart(productIndex){
         const prevCart = userInfo.cart;
-        const newCart = prevCart.filter((itemId)=>{
-            return itemId !== product._id
+        const newCart = prevCart.filter((itemId,index)=>{
+            return index!==productIndex
         });
         const res = await axios.post("http://localhost:3001/updateUser", {
             email: userInfo.email,
@@ -108,7 +108,7 @@ const Cart = () => {
                                 <div className="grid grid-cols-2 py-4">
                                     <button 
                                     className="rounded-3xl bg-yellow-400 hover:bg-yellow-500 duration-300 mx-[4rem] py-2"
-                                    onClick={()=>{ removeFromCart(e) }}>Remove from Cart</button>
+                                    onClick={()=>{ removeFromCart(index) }}>Remove from Cart</button>
                                     <button 
                                     className="rounded-3xl bg-orange-500 hover:bg-orange-600 duration-300 mx-[4rem] py-2"
                                     onClick={()=>{
