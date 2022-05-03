@@ -19,7 +19,7 @@ const Header = ({ loggedIn , userInfo, headerFixed, homePath, setSearched, setSe
         const res = await axios.get("http://localhost:3001/getProducts");
         const data = await res.data;
         data.map((e)=>{
-            if(e.name.includes(searchedWord)){
+            if(e.name.toLowerCase().includes(searchedWord.toLowerCase())){
                 setSearchResults([...result, e]);
                 result.push(e);
             }

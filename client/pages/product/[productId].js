@@ -214,7 +214,7 @@ const productId = () => {
                                 <button
                                 className="px-[5.5rem] py-2 rounded-3xl duration-300 bg-yellow-400 hover:bg-yellow-500"
                                 onClick={()=>{
-                                    if(userInfo){
+                                    if(loggedIn){
                                         addToCart();
                                     }else{
                                         alert("You are not signed in ..")
