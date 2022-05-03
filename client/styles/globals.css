@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+input, textarea{
+  outline: none;
+}
+button{
+  cursor: pointer;
+}
+a{
+  color: rgb(67, 67, 254);
+}a:hover{
+  color: blue;
+  text-decoration: underline;
+}
+
+#sign-in-div:hover #sign-in-floating-div{
+  display: flex;
+  flex-direction: column;
+}
+#username-div:hover #username-floating-div{
+  display: flex;
+  flex-direction: column;
+}
+body{
+  background-color: rgb(230,230,230);
+}
