@@ -9,7 +9,7 @@ services:
     container_name: myapp-node-server
     command: /app/node_modules/.bin/nodemon server.js
     volumes:
-      - ./server/:/usr/src/app
+      - ./server/:/app
       - /app/node_modules
     ports:
       - "3001:3001"
