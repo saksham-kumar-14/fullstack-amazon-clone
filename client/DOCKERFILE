@@ -1,0 +1,17 @@
+# Dockerfile for Client
+
+FROM node:10.16-alpine
+WORKDIR /app
+
+COPY package*.json ./
+
+# installing dependencies
+RUN npm install --silent
+
+# copy local files to app folder
+COPY . .
+
+EXPOSE 3000
+
+CMD [ "npm", "run", "dev" ]
+

@@ -1,0 +1,19 @@
+#  Dockerfile for Node Express Backend
+
+FROM node:10.16-alpine
+
+RUN mkdir -p /app
+WORKDIR /app
+
+# Install Dependencies
+COPY package*.json ./
+
+RUN npm install --silent
+
+# Copy app source code
+COPY . .
+
+# Exports
+EXPOSE 3001
+
+CMD ["npm","run", "dev"]
